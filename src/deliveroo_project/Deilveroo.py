@@ -5,23 +5,19 @@ class Game(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
 
-        headline_text = tk.Label(self, text="Meals without a Deliveroo!!", font=("Ariel",144), fg="red")
-        #headline_text.grid(column=2, row=0)
+        headline_text = tk.Label(self, text="Meals Without Deliveroo!!", font=("Ariel",160), fg="red")
         headline_text.pack()
 
         self.label_var = tk.IntVar()
-        label = tk.Label(self, textvariable=self.label_var, font=("Ariel",300), fg="red")  # Assigned that  variable to the label
+        label = tk.Label(self, textvariable=self.label_var, font=("Ariel",600), fg="red")  # Assigned that  variable to the label
         label.pack()
-        #label.grid(column=2,row=1)
 
         deliveroo_button = tk.Button(self, text="Deliveroo",
-                                     relief="groove", command=self.reset_var, width=30, height=5)
-        #deliveroo_button.grid(column=0, row=4)
+                                     relief="groove", command=self.reset_var, width=20, height=20, font=("Ariel",70), fg="red")
         deliveroo_button.pack(side=LEFT)
 
         not_deliveroo = tk.Button(self, text="Not Deliveroo!!",
-                           relief="groove", command=self.add_var, width=30, height=5)
-        #not_deliveroo.grid(column=3, row=4)
+                           relief="groove", command=self.add_var, width=20, height=20, font=("Ariel",70), fg="green")
         not_deliveroo.pack(side=RIGHT)
 
     def add_var(self):
@@ -32,8 +28,9 @@ class Game(tk.Frame):
 
 root = tk.Tk()
 root.title("Meals Without Deliveroo!!")
-root.resizable()
-root.geometry("2500x1000")
+root.attributes('-fullscreen', True)
+#root.resizable()
+#root.geometry("2500x1000")
 game = Game(root)
 game.pack()
 root.mainloop()

@@ -9,7 +9,7 @@ class Game(tk.Frame):
         headline_text.pack()
 
         self.label_var = tk.IntVar()
-        label = tk.Label(self, textvariable=self.label_var, font=("Ariel",600), fg="red")  # Assigned that  variable to the label
+        label = tk.Label(self, textvariable=self.label_var, font=("Ariel",600), fg="black")  # Assigned that  variable to the label
         label.pack()
 
         deliveroo_button = tk.Button(self, text="Deliveroo",
